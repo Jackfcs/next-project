@@ -1,17 +1,22 @@
 import { server } from "../../../config";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useTestContext } from "../../../context/state";
 
 const article = ({ article }) => {
   // const router = useRouter();
   // const { id } = router.query;
   // console.log(router);
+  const context = useTestContext();
+
+  console.log(context.sharedState);
 
   return (
     <>
       <h1>{article.title}</h1>
       <p>{article.body}</p>
       <br />
+      <button onClick={context.toggleContext}>Change State</button>
       <Link href="/">Go Back</Link>
     </>
   );
