@@ -1,12 +1,12 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 const TestContext = createContext();
 
 export const AppWrapper = ({ children }) => {
-  let sharedState = true;
+  const [sharedState, setSharedState] = useState(true);
 
   const toggleContext = () => {
-    sharedState = !sharedState;
+    setSharedState((prevState) => !prevState);
     console.log(sharedState);
   };
 

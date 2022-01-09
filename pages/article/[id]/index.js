@@ -9,8 +9,6 @@ const article = ({ article }) => {
   // console.log(router);
   const context = useTestContext();
 
-  console.log(context.sharedState);
-
   return (
     <>
       <h1>{article.title}</h1>
